@@ -86,6 +86,11 @@ func update_scene() -> void:
 	#endregion Backgrond
 
 func update_GUI() -> void:
+	#region GUI's scale
+	var ratio : float = float(window.size.x) / float(initial_window_size.x)
+	GUI.scale = Vector2(1,1) * ratio
+	#endregion GUI's scale
+	
 	#region Store node's ID
 	#store here all Button's ID
 	var buttons : Array = [
