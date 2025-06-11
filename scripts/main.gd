@@ -346,7 +346,10 @@ func update_focus(control_nodes : Dictionary) -> void:
 						node.release_focus()
 #endregion Update
 
-#region utilities
+#region Utilities
+func sleep(delta : float = 0.01):
+	await get_tree().create_timer(delta).timeout
+
 func is_in_rectangle(position : Vector2, rectangle_UpLeft_position : Vector2, rectangle_diagonal : Vector2, rectangle_rotation : float) -> bool:
 	#recalculate the position based on rectangle's position and rotation
 	position -= rectangle_UpLeft_position
@@ -356,4 +359,4 @@ func is_in_rectangle(position : Vector2, rectangle_UpLeft_position : Vector2, re
 		(position.x >= 0 and position.y >= 0) and
 		(position.x <= rectangle_diagonal.x and position.y <= rectangle_diagonal.y)
 	)
-#endregion endregion
+#endregion Utilities
