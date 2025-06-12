@@ -62,7 +62,7 @@ func update() -> void:
 	update_scene()
 	update_GUI()
 
-func update_variables():
+func update_variables() -> void:
 	global_mouse_position = scene.get_global_mouse_position()
 
 func update_screen_size() -> void:
@@ -347,7 +347,7 @@ func update_focus(control_nodes : Dictionary) -> void:
 #endregion Update
 
 #region Utilities
-func sleep(delta : float = 0.01):
+func sleep(delta : float = 0.01) -> void:
 	await get_tree().create_timer(delta).timeout
 
 func is_in_rectangle(position : Vector2, rectangle_UpLeft_position : Vector2, rectangle_diagonal : Vector2, rectangle_rotation : float) -> bool:
